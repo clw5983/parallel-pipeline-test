@@ -7,6 +7,10 @@ pipeline {
     }
 
     environment {
+        HTTP_PROXY = credentials('HTTP_PROXY')
+        HTTPS_PROXY = credentials('HTTPS_PROXY')
+        NO_PROXY = credentials('NO_PROXY')
+        
         // Define your Nexus IQ server credentials and URLs
         NEXUS_IQ_SERVER_URL = credentials('NEXUS_IQ_SERVER_URL')
         NEXUS_IQ_CREDS = credentials('NEXUS_IQ_CREDENTIALS')
