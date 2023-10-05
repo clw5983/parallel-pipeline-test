@@ -2,14 +2,19 @@ pipeline {
     agent any
 
     environment {
+        /*
         HTTP_PROXY = credentials(HTTP_PROXY)
         HTTPS_PROXY = credentials(HTTPS_PROXY)
         NO_PROXY = credentials(NO_PROXY)
 
         // Define your Nexus IQ server credentials and URLs
-        NEXUS_IQ_SERVER_URL = credentials(NEXUS_IQ_SERVER_URL)
+        NEXUS_IQ_SERVER_URL = env.NEXUS_IQ_SERVER_URL
+
         NEXUS_IQ_USERNAME = credentials(NEXUS_IQ_USERNAME)
         NEXUS_IQ_PASSWORD = credentials(NEXUS_IQ_PASSWORD)
+        */
+        
+        NEXUS_IQ_SERVER_URL = env.NEXUS_IQ_SERVER_URL
         NEXUS_IQ_APPLICATION_ID = 'TEST_WEB_APP'
     }
 
