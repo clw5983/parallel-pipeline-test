@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checking application ID in Sonatype Server') {
             steps {
-                echo "Checking application ID in Sonatype Server: $NEXUS_IQ_APPLICATION_ID"
+                echo "Checking application ID in Sonatype Server: $NEXUS_IQ_SERVER_URL"
             }
         }
     }
