@@ -21,8 +21,10 @@ pipeline {
                 sh 'export NVM_DIR="$HOME/.nvm"'
 
                 sh """
-                [ -s "$NVM_DIR/nvm.sh" ] && . '$NVM_DIR/nvm.sh'
+                [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
                 """
+
+                sh "source ~/.bashrc"
 
                 sh 'nvm install node'
             }
