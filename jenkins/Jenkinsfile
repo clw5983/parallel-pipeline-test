@@ -13,7 +13,7 @@ pipeline {
         NEXUS_IQ_USERNAME = credentials(NEXUS_IQ_USERNAME)
         NEXUS_IQ_PASSWORD = credentials(NEXUS_IQ_PASSWORD)
         */
-        NEXUS_IQ_SERVER_URL = $NEXUS_IQ_SERVER_URL
+        NEXUS_IQ_SERVER_URL = credentials(NEXUS_IQ_SERVER_URL)
         NEXUS_IQ_APPLICATION_ID = 'TEST_WEB_APP'
     }
 
