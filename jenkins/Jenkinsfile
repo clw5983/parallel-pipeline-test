@@ -2,15 +2,29 @@ pipeline {
     agent any
 
     environment {
-        NEXUS_IQ_SERVER_URL = credentials('NEXUS_IQ_SERVER_URL')
         NEXUS_IQ_APPLICATION_ID = 'TEST_WEB_APP'
     }
 
     stages {
         stage('Checking application ID in Sonatype Server') {
             steps {
-                echo "Checking application ID in Sonatype Server"
+                echo "Checking application ID in Sonatype Server: $NEXUS_IQ_APPLICATION_ID"
             }
         }
+
+        /*
+        stage('Pull and Scan Docker Images w/o Async or //') {
+            steps {
+                script {
+                    def startTime = currentBuild.startTimeInMillis
+
+                    def endTime = currentBuild.startTimeInMillis
+                    def totalTime = endTime - startTime
+
+                    echo "Total execution time without async/parallel: ${totalTime} ms"
+                }
+            }
+        }
+        */
     }
 }
