@@ -13,9 +13,11 @@ pipeline {
     }
 
     stages {
-        stage('Checking application ID in Sonatype Server') {
+        stage('Install nvm and Node.js') {
             steps {
-                echo "Checking application ID in Sonatype Server: $NEXUS_IQ_SERVER_URL"
+                // Install nvm
+                sh 'curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash'
+                sh 'nvm install node'
             }
         }
 
@@ -34,5 +36,11 @@ pipeline {
                 }
             }
         }
+
+        stage('Checking application ID in Sonatype Server') {
+            steps {
+                echo "Checking application ID in Sonatype Server: $NEXUS_IQ_SERVER_URL"
+            }
+        }    
     }
 }
