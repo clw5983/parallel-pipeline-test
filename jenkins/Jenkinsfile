@@ -13,16 +13,19 @@ pipeline {
         NEXUS_IQ_USERNAME = credentials(NEXUS_IQ_USERNAME)
         NEXUS_IQ_PASSWORD = credentials(NEXUS_IQ_PASSWORD)
         */
-        NEXUS_IQ_SERVER_URL = credentials('NEXUS_IQ_SERVER_URL')
+        
+        NEXUS_IQ_SERVER_URL = credentials(NEXUS_IQ_SERVER_URL)
         NEXUS_IQ_APPLICATION_ID = 'TEST_WEB_APP'
     }
 
     stages {
+        /*
         stage('Checking application ID in Sonatype Server') {
             steps {
                 echo "Checking application ID in Sonatype Server: $NEXUS_IQ_SERVER_URL"
             }
         }
+        */
 
         stage('Pull and Scan Docker Images w/o Async or //') {
             steps {
