@@ -18,8 +18,7 @@ pipeline {
                 // Install nvm
                 sh 'curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash'
 
-                // Source nvm to make it available in this shell
-                sh 'source ~/.nvm/nvm.sh'
+                sh 'export NVM_DIR="$HOME/.nvm'
 
                 sh 'nvm install node'
             }
