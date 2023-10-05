@@ -14,5 +14,21 @@ pipeline {
                 echo "Checking application ID in Sonatype Server: $NEXUS_IQ_SERVER_URL"
             }
         }
+
+        stage('Install Frontend Dependencies') {
+            steps {
+                dir('frontend') {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Install Backend Dependencies') {
+            steps {
+                dir('backend') {
+                    sh 'npm install'
+                }
+            }
+        }
     }
 }
