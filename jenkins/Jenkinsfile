@@ -13,18 +13,6 @@ pipeline {
     }
 
     stages {
-        stage("Check User and Group") {
-            steps {
-                script {
-                    def currentUser = sh(script: 'whoami', returnStatus: true).trim()
-                    def userGroups = sh(script: 'groups', returnStatus: true).trim()
-
-                    echo "Current User: ${currentUser}"
-                    echo "User Groups: ${userGroups}"
-                }
-            }
-        }
-        
         stage('Install Frontend Dependencies') {
             steps {
                 dir('frontend') {
