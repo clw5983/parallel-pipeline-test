@@ -13,7 +13,7 @@ pipeline {
     }
 
     stages {
-        stage() {
+        stage("Check User and Group") {
             steps {
                 script {
                     def currentUser = sh(script: 'whoami', returnStatus: true).trim()
