@@ -10,6 +10,8 @@ pipeline {
         NEXUS_IQ_SERVER_URL = credentials('NEXUS_IQ_SERVER_URL')
         NEXUS_IQ_CREDS = credentials('NEXUS_IQ_CREDENTIALS')
         NEXUS_IQ_APPLICATION_ID = 'TEST_WEB_APP'
+
+        PATH = "/usr/bin:/usr/local/bin:$HOME/.nvm/versions/node/v18.17.1/bin:$PATH"
     }
 
     stages {
